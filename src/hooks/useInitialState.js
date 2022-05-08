@@ -44,27 +44,35 @@ export const useInitialState = () => {
     });
   };
 
-  const setCounter = async (input) => {
-    await setState({
+  const setPages = (input) => {
+    let pages = Math.round(input / 10);
+    setState({
       ...state,
+      pages: pages,
       counter: input,
     });
   };
 
-  const setPages = async (input) => {
-    let pages = Math.round(input / 10);
-    await setState({
+  const setData = (input) => {
+    setState({
       ...state,
-      pages: pages,
+      data: input,
     });
   };
 
-  // const setData = async (input) => {
-  //   await setState({
-  //     ...state,
-  //     data: input,
-  //   });
-  // };
+  const setLoadingStatus = (input) => {
+    setState({
+      ...state,
+      loading: input,
+    });
+  };
+
+  const setQuery = (input) => {
+    setState({
+      ...state,
+      query: input,
+    });
+  };
 
   return {
     state,
@@ -73,8 +81,9 @@ export const useInitialState = () => {
     goToNext,
     goToLast,
     changePage,
-    setCounter,
     setPages,
-    // setData,
+    setData,
+    setLoadingStatus,
+    setQuery,
   };
 };
