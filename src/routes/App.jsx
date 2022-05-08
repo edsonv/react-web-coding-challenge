@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import { Home } from '../pages/Home';
 import { Details } from '../pages/Details';
@@ -10,12 +10,12 @@ export const App = () => {
 
   return (
     <Context.Provider value={initialState}>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route index path='/' element={<Home />} />
           <Route path='/details/:id' element={<Details />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </Context.Provider>
   );
 };
