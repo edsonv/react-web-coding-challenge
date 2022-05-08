@@ -44,6 +44,12 @@ export const Details = () => {
             ) : (
               <p>No image available</p>
             )}
+            <h2>Description of incident</h2>
+            <p>
+              {bike.stolen_record.theft_description
+                ? bike.stolen_record.theft_description
+                : 'No description available'}
+            </p>
           </section>
         ) : (
           <Loading />
