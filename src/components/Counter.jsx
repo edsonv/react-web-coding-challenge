@@ -16,9 +16,9 @@ export const Counter = () => {
       })
       .then(async (data) => {
         await setPages(data.proximity);
+        setLoadingStatus(false);
       })
       .catch((error) => console.error(error));
-    setLoadingStatus(false);
     console.log('Counter', state);
   }, []);
 
