@@ -1,0 +1,11 @@
+.c-bike-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  & > .imagesContainer {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+}
