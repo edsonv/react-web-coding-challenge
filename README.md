@@ -1,4 +1,5 @@
 # Stolen Bike Index - Frontend (React) Conding Challenge
+
 ![JOIN Stolen Bike Cases](https://github.com/chiper-inc/React-Web-Coding-Challenge/blob/master/illustration.png)
 
 ## Context
@@ -11,19 +12,19 @@ This app needs to display the list of reported bike thefts based on the Bikewise
 
 As a police officer:
 
-- [ ] I want to see a list of reported bike thefts for the Berlin area.
-- [ ] I want to see a detail page of the reported bike.
-- [ ] I want to see the first 10 bike theft cases, with the ability to - paginate (10 cases per page).
+- [x] I want to see a list of reported bike thefts for the Berlin area.
+- [x] I want to see a detail page of the reported bike.
+- [x] I want to see the first 10 bike theft cases, with the ability to - paginate (10 cases per page).
 - [ ] I want to see a total number of bike theft cases.
-- [ ] For each reported bike theft I want to see:
-  - [ ] Case title
-  - [ ] Case description
-  - [ ] Date of the theft
-  - [ ] Date of when the case was reported
-  - [ ] Location of the theft
-  - [ ] Picture of the bike, if available
+- [x] For each reported bike theft I want to see:
+  - [x] Case title
+  - [x] Case description
+  - [x] Date of the theft
+  - [x] Date of when the case was reported
+  - [x] Location of the theft
+  - [x] Picture of the bike, if available
 - [ ] I want to filter reported bike thefts by partial case title.
-- [ ] I want to see a loading state until the list is available.
+- [x] I want to see a loading state until the list is available.
 - [ ] I want to see an error state if the list is unavailable.
 - [ ] I want to see an empty state if there are no results.
 
@@ -31,7 +32,7 @@ As a police officer:
 
 Create the React application that satisfies all must-have requirements above, plus any nice-to-have requirements you wish to include.
 
-For that, you’ll need to make requests to a publicly-available [API](https://bikeindex.org/documentation/api_v3) to get JSON content and print it on view. 
+For that, you’ll need to make requests to a publicly-available [API](https://bikeindex.org/documentation/api_v3) to get JSON content and print it on view.
 
 The API is known to have some limitations. If you are not able to implement a particular requirement, please provide a description of what and why you could not implements.
 
