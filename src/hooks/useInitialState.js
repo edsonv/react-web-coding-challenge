@@ -53,20 +53,6 @@ export const useInitialState = () => {
     });
   };
 
-  const setData = (input) => {
-    setState({
-      ...state,
-      data: input,
-    });
-  };
-
-  const setLoadingStatus = (input) => {
-    setState({
-      ...state,
-      loading: input,
-    });
-  };
-
   const setQuery = (input) => {
     setState({
       ...state,
@@ -82,8 +68,6 @@ export const useInitialState = () => {
     goToLast,
     changePage,
     setPages,
-    setData,
-    setLoadingStatus,
     setQuery,
   };
 };
