@@ -2,14 +2,20 @@ import { useContext, useRef } from 'react';
 import { Context } from '../context/Context';
 
 export const SearchForm = () => {
-  const { setQuery } = useContext(Context);
+  const { setQuery, goToFirst } = useContext(Context);
   const form = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(form.current);
     const query = formData.get('input');
+    goToFirst();
     setQuery(query);
+  };
+
+  const handleReset = () => {
+    goToFirst();
+    setQuery('');
   };
 
   return (
@@ -23,7 +29,7 @@ export const SearchForm = () => {
         type='text'
         name='input'
         id='input'
-        placeholder='Search case descriptions'
+        placeholder='Search case title'
       />
       <input
         type='text'
@@ -42,6 +48,9 @@ export const SearchForm = () => {
         placeholder='To'
       />
       <button type='submit'>Find cases</button>
+      <button type='reset' onClick={() => handleReset()}>
+        Reset
+      </button>
     </form>
   );
 };
