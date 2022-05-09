@@ -3,7 +3,7 @@ import { Dummy } from './Dummy';
 
 export const Card = ({ bike }) => {
   return (
-    <article className='c-card' key={bike.id}>
+    <article className='c-card'>
       <picture>
         {bike.thumb !== null ? (
           <img src={bike.thumb} alt={bike.title} width='100' height='100' />
