@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Header } from '../components/Header';
 import { Loading } from '../components/Loading';
 
 export const Details = () => {
@@ -19,10 +18,9 @@ export const Details = () => {
 
   return (
     <>
-      <Header />
-      <main>
-        {bike ? (
-          <section className='c-bike-details'>
+      {bike ? (
+        <article className='c-bike-details'>
+          <section className='c-section'>
             <h2 className='title'>Stolen {bike.title}</h2>
             <p className='description'>{`Stolen ${new Date(
               bike.date_stolen
@@ -44,17 +42,19 @@ export const Details = () => {
             ) : (
               <p>No image available</p>
             )}
-            <h2>Description of incident</h2>
-            <p>
+          </section>
+          <section className='c-section'>
+            <h2 className='title'>Description of incident</h2>
+            <p className='theftDescription'>
               {bike.stolen_record.theft_description
                 ? bike.stolen_record.theft_description
                 : 'No description available'}
             </p>
           </section>
-        ) : (
-          <Loading />
-        )}
-      </main>
+        </article>
+      ) : (
+        <Loading />
+      )}
     </>
   );
 };
