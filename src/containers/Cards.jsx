@@ -1,15 +1,17 @@
-// import axios from 'axios';
-import { useEffect, useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Card } from '../components/Card';
-import { Loading } from '../components/Loading';
 import { Counter } from '../components/Counter';
 import { Pager } from '../components/Pager';
 import { Context } from '../context/Context';
+import { Loading } from '../components/Loading';
 
 export const Cards = () => {
-  const { state, setData } = useContext(Context);
+  const { state } = useContext(Context);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     fetch(
       `https://bikeindex.org:443/api/v3/search?page=${
         state.currentPage
@@ -22,22 +24,24 @@ export const Cards = () => {
       })
       .then((data) => {
         setData(data.bikes);
-      })
-      .catch((error) => console.error(error));
-  }, [state.query, state.currentPage]);
+        setLoading(false);
+      });
+  }, [state.currentPage, state.query]);
 
   return (
     <section className='c-cards-container'>
-      {state.data.length > 0 ? (
+      <Counter />
+      {loading ? (
+        <Loading />
+      ) : data.length > 0 ? (
         <>
-          <Counter />
-          {state.data.map((bike) => (
+          {data.map((bike) => (
             <Card bike={bike} key={bike.id} />
           ))}
           <Pager pageLimit={3} />
         </>
       ) : (
-        <Loading />
+        'No data available'
       )}
     </section>
   );
